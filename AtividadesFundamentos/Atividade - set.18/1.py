@@ -13,8 +13,6 @@ da operação para o chamador;
     • A impressão do resultado deve ser feita a partir do chamador;
 '''
 
-
-
 def Menu():
     print("\n\nInforme o operador: ")
     print(" 1. Soma \n", "2. Subtração \n", "3. Divisão \n", "4. Multiplicação \n")
@@ -30,11 +28,11 @@ def Subtracao(n1, n2):
     return resultado
 
 def Divisao(n1, n2):
-    resultado = n1 + n2
+    resultado = n1 / n2
     return resultado
 
 def Multiplicacao(n1, n2):
-    resultado = n1 - n2
+    resultado = n1 * n2
     return resultado
 
 if __name__ == "__main__":

@@ -8,15 +8,11 @@ parâmetros no “main” e em seguida chame o procedimento passando os 3 parâm
 
 from cmath import sqrt
 
-def calculo(a, b, c):
+def _raizes(a, b, c):
     calculoDelta = b ** 2 - 4 * a * c
     return calculoDelta // 1
 
-def raizes(num):
-    raiz = sqrt(num)
-    return raiz
-
-def ehPositivo(delta):
+def _ehPositivo(delta):
     if delta >= 0:
         return True
     
@@ -29,8 +25,12 @@ if __name__ == "__main__":
     parB = float(input("\nInforme o valor de 'b': "))
     parC = float(input("\nInforme o valor de 'c': "))
 
-    delta = int(calculo(parA, parB, parC))
-    deltaPositivo = ehPositivo(delta)
-    raiz = raizes(delta)
+    delta = int(_raizes(parA, parB, parC))
+    verificando = _ehPositivo(delta)
 
-    print(delta, deltaPositivo, raiz)
+    if verificando == True:
+        print('\n A raiz é positiva')
+        print('\n O resultado da raiz é: ', sqrt(delta))
+
+    if verificando == False:
+        print('\n Não há raiz.')
