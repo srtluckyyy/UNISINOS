@@ -13,4 +13,5 @@ for i in range(10):
     vet2.insert(0, x)
 
 for v1 in range(10): print(vet1[v1])
+print()
 for v2 in range(10): print(vet2[v2])
