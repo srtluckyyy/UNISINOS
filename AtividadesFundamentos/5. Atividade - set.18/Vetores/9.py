@@ -49,9 +49,6 @@ def _quantidadeAlunosNotas(vNota):
     vQNota = []
     vNota = sorted(vNota)
 
-    print(vNota)
-    print(vQNota)
-
     nota1 = 0
     nota2 = 0
     nota3 = 0
@@ -62,14 +59,14 @@ def _quantidadeAlunosNotas(vNota):
     nota8 = 0
 
     for i in range(len(vNota)):
-        if vNota[i] == 0 and vNota <= 3: nota1 += 1
-        elif vNota[i] == 3.1 and vNota <= 4: nota2 += 1
-        elif vNota[i] == 4.1 and vNota <= 5: nota3 += 1
-        elif vNota[i] == 5.1 and vNota <= 6: nota4 += 1
-        elif vNota[i] == 6.1 and vNota <= 7: nota5 += 1
-        elif vNota[i] == 7.1 and vNota <= 8: nota6 += 1
-        elif vNota[i] == 8.1 and vNota <= 9: nota7 += 1
-        elif vNota[i] == 9.1 and vNota <= 10: nota8 += 1
+        if vNota[i] >= 0 and vNota[i] <= 3: nota1 += 1
+        elif vNota[i] >= 3.1 and vNota[i] <= 4: nota2 += 1
+        elif vNota[i] >= 4.1 and vNota[i] <= 5: nota3 += 1
+        elif vNota[i] >= 5.1 and vNota[i] <= 6: nota4 += 1
+        elif vNota[i] >= 6.1 and vNota[i] <= 7: nota5 += 1
+        elif vNota[i] >= 7.1 and vNota[i] <= 8: nota6 += 1
+        elif vNota[i] >= 8.1 and vNota[i] <= 9: nota7 += 1
+        elif vNota[i] >= 9.1 and vNota[i] <= 10: nota8 += 1
     
     vQNota.append(nota1)
     vQNota.append(nota2)
@@ -80,8 +77,6 @@ def _quantidadeAlunosNotas(vNota):
     vQNota.append(nota7) 
     vQNota.append(nota8)
 
-    print(vQNota)
-
     return vQNota
  
 
@@ -89,8 +84,11 @@ quantidadeAlunos = 0
 vetorNotas = []
 tamanhoTurma = int(input('\nQuantos alunos há na turma? '))
 
-print('\nDigite as notas dos alunos:')
-for contador in range(tamanhoTurma): vetorNotas.append(float(input(f'Aluno {contador + 1}: ')))
+print('\nDigite as notas dos alunos(0 - 10):')
+for contador in range(tamanhoTurma): 
+    notaluno = float(input(f'Aluno {contador + 1}: '))
+    if notaluno > 10: notaluno /= 10
+    vetorNotas.append(notaluno)
 
 menorNota = _notas(2, vetorNotas)
 maiorNota = _notas(1, vetorNotas)
