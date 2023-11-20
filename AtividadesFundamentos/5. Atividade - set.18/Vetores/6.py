@@ -8,9 +8,11 @@ tela após a inversão dos elementos;
 vet = []
 
 print('Digite 10 números: ')
-for i in range(10):
+for v1 in range(10):
     x = int(input())
     vet.insert(0, x)
+
+for v2 in range(10): vet.reverse()
 
 print(vet)
 
