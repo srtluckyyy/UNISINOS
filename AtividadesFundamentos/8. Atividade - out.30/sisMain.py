@@ -8,18 +8,10 @@ Criar um acesso de conta de usuário
 import os
 import sisDef, sisInterface
 
-var = '7890'
-
-with open('login.txt', 'a+') as logifile:
-    logifile.write('123')
-    log = logifile.read()
-    print(log)
-
-'''
 while True:
     os.system('cls' if os.name == 'nt' else 'clean')
-    
-    resposta = sisInterface.opcoes(['Login', 'Cadastro', 'Sair'])
+
+    resposta = sisInterface.opcoes(['Login', 'Cadastro', 'Sair', 'Logs'])
 
     if resposta == '1':
         sisDef.loginUsuario()
@@ -30,5 +22,17 @@ while True:
     elif resposta == '3':
         sisInterface.mensage(2)
 
+    elif resposta == '4':
+        with open('login.txt', 'r') as logfile:
+            loginlist = logfile.readlines()
+        
+        with open('senha.txt', 'r') as senhafile:
+            senhalist = senhafile.readlines()
+
+        for i in range(len(loginlist)):
+            print(f'{loginlist[i]} | {senhalist[i]}')
+        
+        input()
+
     else:
-        sisInterface.mensage(1)'''
+        sisInterface.mensage(1)

@@ -7,6 +7,7 @@ def mensage(num = 0):
     elif num == 1:
         print('\nInput não reconhecido, tente novamente!')
         input('\nAperte ENTER para continuar...')
+        __cached__
 
     elif num == 2:
         os._exit(os.EX_OK)
@@ -44,6 +45,8 @@ def login(opc = 'login',num = 40):
 
         vetLog.append(log)
         vetLog.append(senha)
+
+        print(vetLog)
 
     elif opc == 'cadastro':
         while True:
