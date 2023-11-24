@@ -36,11 +36,11 @@ def main(lista):
     listLinhas = []
 
     for cont in range(1, 8): 
-            listLinguagem.append(lista[cont][0])
-            listCpu.append(lista[cont][1])
-            listMemory.append(lista[cont][2])
-            lisTempo.append(lista[cont][3])
-            listLinhas.append(lista[cont][4])
+        listLinguagem.append(lista[cont][0])
+        listCpu.append(lista[cont][1])
+        listMemory.append(lista[cont][2])
+        lisTempo.append(lista[cont][3])
+        listLinhas.append(lista[cont][4])
     
     inde = listLinhas.index(min(listLinhas))
     menorLinhas = f'\nLinguagem {listLinguagem[inde]}  //  {min(listLinhas)}'
