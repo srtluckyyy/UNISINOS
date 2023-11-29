@@ -2,17 +2,15 @@ import os
 import sisInterface
 
 def cadastroUsuário():
-    listLog = sisInterface.login('cadastro')
+    listLog = sisInterface.cadastro()
     login = listLog[0]
     senha = listLog[1]
 
     with open('login.txt', 'a') as loginfile:
         loginfile.write(f'{login}\n')
-        loginfile.flush()
 
     with open('senha.txt', 'a') as senhafile:
         senhafile.write(f'{senha}\n')
-        senhafile.flush()
 
 
 def loginUsuario():
@@ -41,14 +39,14 @@ def loginUsuario():
                 print(f'linha {linha}')
 
                 with open('senha.txt', 'r') as senhafile:
-                    print(senhafile.readlines(linha))
                     senha = senhafile.readlines(linha)
-
+                    print(senha)
+    
                 print(f'senha {senha}, senhaLogin {senhaLogin}')
                         
                 if senha == senhaLogin:
                     input('logado?')
-                    main()
+                    software()
 
                 else: 
                     print('\nSenha incorreta.')
@@ -60,11 +58,7 @@ def loginUsuario():
         return
 
 
-def vetorLogs():
-    pass #transformar o txt em vetor
-
-
-def main():
+def software():
     os.system('cls' if os.name == 'nt' else 'clean')
 
     print('\nVocê logou com sucesso!')

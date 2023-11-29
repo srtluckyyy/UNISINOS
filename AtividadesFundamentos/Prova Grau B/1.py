@@ -8,14 +8,10 @@ palavra na frase e mostre a frase alterada na tela.
 
 '''Acabei por fazer dessa forma, não consegui resolver da forma 'simples'/'''
 
-resposta = 1
-fraseV = []
 frase = ''
-while resposta != 0:
-    resposta = input('Digite palavras para o texto: (0 para sair): \n')
-    if resposta == '0': break
-    fraseV.append(resposta)
-    frase += resposta
+
+resposta = input('Digite o texto: ')
+frase += resposta
 
 palavra = input('Informe uma palavra: ')
 
@@ -24,6 +20,4 @@ if palavra not in frase:
 
 else: 
     print(f'\nA palavra escolhida aparece no texto {frase.count(palavra)} vezes.')
-    for i in range(frase.count(palavra)): fraseV.remove(palavra)
-    print(fraseV)
-
+    print(frase.replace(palavra, ''))

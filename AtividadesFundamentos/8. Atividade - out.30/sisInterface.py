@@ -34,36 +34,40 @@ def opcoes(opc: list, num = 40):
     return resposta
 
 
-def login(opc = 'login',num = 40):
+def login(num = 40):
     vetLog = []
-    
-    if opc == 'login':
+
+    _linha(num)
+    log = input('Login: ')
+    senha = input('Senha: ')
+    _linha(num)
+
+    vetLog.append(log)
+    vetLog.append(senha)
+
+    print(vetLog)
+
+    return vetLog
+
+
+def cadastro(num = 40):
+    vetCad = []
+
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clean')
+
         _linha(num)
         log = input('Login: ')
         senha = input('Senha: ')
+        confSenha = input('Confirme sua senha: ')
         _linha(num)
 
-        vetLog.append(log)
-        vetLog.append(senha)
+        if senha == confSenha: 
+            vetCad.append(log)
+            vetCad.append(senha)
+            break
+        else: 
+            print('\nAs senhas não correspondem.')
+            mensage(0)
 
-        print(vetLog)
-
-    elif opc == 'cadastro':
-        while True:
-            os.system('cls' if os.name == 'nt' else 'clean')
-
-            _linha(num)
-            log = input('Login: ')
-            senha = input('Senha: ')
-            confSenha = input('Confirme sua senha: ')
-            _linha(num)
-
-            if senha == confSenha: 
-                vetLog.append(log)
-                vetLog.append(senha)
-                break
-            else: 
-                print('\nAs senhas não correspondem.')
-                mensage(0)
-
-    return vetLog
+    return vetCad

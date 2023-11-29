@@ -42,12 +42,13 @@ def main(lista):
         lisTempo.append(lista[cont][3])
         listLinhas.append(lista[cont][4])
     
-    inde = listLinhas.index(min(listLinhas))
-    menorLinhas = f'\nLinguagem {listLinguagem[inde]}  //  {min(listLinhas)}'
+    inde = listLinhas.index(min(listLinhas)) ##numero index
+    menorLinhas = f'\nLinguagem {listLinguagem[inde]}  //  {min(listLinhas)}' ##print
+
     strDesemp = desempenho(listLinguagem, listCpu, listMemory, lisTempo, listLinhas, 1)
     listDesemp = desempenho(listLinguagem, listCpu, listMemory, lisTempo, listLinhas, 2)
+    
     metricas(listDesemp, listCpu, listMemory, lisTempo, listLinhas)
-
     relatorio(strDesemp, menorLinhas)
     
 
@@ -81,7 +82,7 @@ def metricas(desemp, cpu, memory, tempo, linha):
 def relatorio(desempenho, linhas):
     print('\n\n')
     print('-' * 50)
-    print(f'LINGUAGEM COM MAIOR DESEMPENHO: {desempenho}'.center(50))
+    print(f'LINGUAGEM COM MAIOR DESEMPENHO: {desempenho}\n\n\n'.center(50))
     print('-' * 50)
     print(f'LINGUAGEM COM MENOR NUMERO DE LINHAS: {linhas}'.center(50))
     print('-' * 50)
@@ -98,11 +99,10 @@ def desempenho(ling, cpu, memory, tempo, linha, num):
         print('DESEMPENHO DE CADA LINGUAGEM'.center(50))
         print('-' * 50)
         for i in range(7):
-            desempenho = 160 / (int(cpu[i]) * 100 + float(memory[i]) + int(tempo[i]) + int(linha[i]))
+            desempenho = 106 / (int(cpu[i]) * 100 + float(memory[i]) + int(tempo[i]) + int(linha[i]))
             vetDesemp.append(desempenho)
             vetLinguagem.append(ling[i])
             print(f'{ling[i]}    =    {desempenho:.2f}')
-
 
         inde = vetDesemp.index(max(vetDesemp))
         melhorDesemp = f'\nLinguagem {vetLinguagem[inde]}  //  {max(vetDesemp):.3f}'
@@ -110,7 +110,7 @@ def desempenho(ling, cpu, memory, tempo, linha, num):
         return melhorDesemp
     elif num == 2:
         for i in range(7):
-            desempenho = 160 / (int(cpu[i]) * 100 + float(memory[i]) + int(tempo[i]) + int(linha[i]))
+            desempenho = 106 / (int(cpu[i]) * 100 + float(memory[i]) + int(tempo[i]) + int(linha[i]))
             vetDesemp.append(desempenho)
         return vetDesemp
 

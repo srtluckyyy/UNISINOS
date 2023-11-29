@@ -9,7 +9,11 @@ No final, mostre a quantidade total de pacotes aprovados e reprovados.
 '''
 
 def verificarPeso(peso):
-    if peso >= 49 and peso <= 51: return True
+    parafusos = peso / 3
+
+    print(f'Este pacote tem, em média: {int(parafusos)} parafusos.')
+    
+    if 147 <= peso <= 153: return True
     else: return False
 
 
