@@ -20,6 +20,7 @@ def cMatriz(colunas = 6, linhas = 4):
     print(matriz)
     return matriz
 
+
 def primeriaLinha(matriz: list, colunas = 6):
     matriz[0].clear()
     for i in range(colunas):
@@ -27,10 +28,6 @@ def primeriaLinha(matriz: list, colunas = 6):
         matriz[0].insert(i, n)
         print(matriz)
 
-def constrMatriz(matriz: list, colunas = 6, linhas = 4):
-    for i in range(colunas):
-        matriz[1].append(matriz[i + 1 + ])
-    pass
 
 def main():
     coluna = 6
@@ -38,6 +35,5 @@ def main():
 
     matriz = cMatriz(coluna, linha)
     primeriaLinha(matriz, coluna)
-    constrMatriz(matriz, coluna, linha)
 
 main()
