@@ -15,25 +15,77 @@ as seguintes ações:
     separador das colunas.
 '''
 
-def cMatriz(colunas = 6, linhas = 4):
-    matriz = [[0 for c in range(colunas)] for l in range(linhas)]
-    print(matriz)
+import os
+
+coluna = 6
+linha = 4
+
+os.system("cls")
+
+def cMatriz():
+    matriz = [[0 for c in range(coluna)] for l in range(linha)]
     return matriz
 
 
-def primeriaLinha(matriz: list, colunas = 6):
+def primeriaLinha(matriz: list):
     matriz[0].clear()
-    for i in range(colunas):
+    for i in range(coluna):
         n = int(input(f'Digite o {i + 1}o número: '))
-        matriz[0].insert(i, n)
-        print(matriz)
+        matriz[0].append(n)
+
+
+def invertLinha(matriz: list):
+    matriz[1].clear()
+    for i in range(coluna):
+        matriz[1].append(matriz[0][coluna - i - 1])
+
+
+def somaLinhas(matriz: list, ):
+    matriz[2].clear()
+    for i in range(coluna):
+        matriz[2].append(matriz[0][i] + matriz[1][i])
+
+
+def parimpar(matriz: list):
+    impar = []
+    matriz[3].clear()
+    for i in range(coluna):
+        if matriz[0][i] % 2 == 0:
+            matriz[3].append(matriz[0][i])
+        else:
+            impar.append(matriz[0][i])
+    
+    for i in range(len(impar)):
+        matriz[3].append(impar[i])
+
+
+def printM(matriz):
+    for l in range(linha):
+        for c in range(coluna):
+            print(matriz[l][c], end='\t')
+        print()
+
+
+def printMT(matriz):
+    for l in range(coluna):
+        for c in range(linha):
+            print(matriz[c][l], end='\t')
+        print()
 
 
 def main():
-    coluna = 6
-    linha = 4
+    matriz = cMatriz()
+    primeriaLinha(matriz)
+    invertLinha(matriz)
+    somaLinhas(matriz)
+    parimpar(matriz)
 
-    matriz = cMatriz(coluna, linha)
-    primeriaLinha(matriz, coluna)
+    print('\n', '-' * 50)
+    print('\nMATRIZ\n\n')
+    printM(matriz)
+    print('\n', '-' * 50)
+    print('\nMATRIZ TRANSPOSTA\n\n')
+    printMT(matriz)
+    print('\n', '-' * 50)
 
 main()
