@@ -11,19 +11,19 @@ from continente import Continente
 
 
 def main():
-    p1 = Pais('BRA', 'Brasíl', 215.3, 8.56)
-    p2 = Pais('ARG', 'Argentina', 47.3, 2.78)
-    p3 = Pais('URY', 'Uruguai', 3.444, 0.176)
-    p4 = Pais()
-    p5
-    p6
-    p7
-    p8
-    p9
+    brasil = Pais('BRA', 'Brasíl', 215.3, 8.56)
+    argentina = Pais('ARG', 'Argentina', 47.3, 2.78)
+    uruguai = Pais('URY', 'Uruguai', 3.444, 0.176)
+    portugal = Pais('PRT', 'Portugal', 10.41, 0.092)
+    espanha = Pais('ESP', 'Espanha', 47.45, 0.5)
+    franca = Pais('FRA', 'França', 67.348, 0.543)
+    china = Pais('CHN', 'China', 1409.67, 9.596)
+    japao = Pais('JPN', 'Japão', 124.631, 0.377)
+    coreia = Pais('KOR', 'Coreia do Sul', 51.446, 0.100)
 
-    c1 = Continente('América do Sul')
-    c2 = Continente('Ásia')
-    c3 = Continente('Europa')
+    america = Continente('América do Sul')
+    asia = Continente('Ásia')
+    europa = Continente('Europa')
 
 
 if __name__ == '__main__':

@@ -16,13 +16,13 @@ Considere que um país tem no máximo 40 outros países com os quais ele faz fro
 
 
 class Pais:
-    def __init__(self, ISO: str, nome: str, populacao: float, dimensaoKM2: float) -> None:
+    def __init__(self, ISO: str, nome: str, populacao_Mi: float, dimensao_Mi_KM2: float) -> None:
         self.__name = nome
         self.__ISO = ISO
-        self.__population = populacao
-        self.__dimension = dimensaoKM2
+        self.__population = populacao_Mi
+        self.__dimension = dimensao_Mi_KM2
 
-    
+
     @property
     def nome(self):
         return self.__name
@@ -42,7 +42,7 @@ class Pais:
     def dimensao(self):
         return self.__dimension
     
-    
+
     @nome.setter
     def nome(self, nome):
         self.__name = nome
@@ -62,3 +62,29 @@ class Pais:
     def dimensao(self, dimension):
         self.__dimension = dimension
 
+
+    #Crie um método que permita verificar se dois objetos representam o mesmo país (igualdade semântica). 
+    #Dois países são iguais se tiverem o mesmo código ISO.
+    def __eq__(self, pais: object) -> bool:
+        if self == pais: return True
+        elif self.__ISO == pais.__iso: return True
+        else: return False
+
+
+    #Crie um método que informe se outro país é limítrofe do país que recebeu a mensagem.
+    def isNeigh(self):
+        pass
+
+    
+    #Crie um método que retorne a densidade populacional do país.
+    def popuDensity(self):
+        pass
+
+
+    #Crie um método que receba um país como parâmetro e retorne a lista de vizinhos comuns aos dois países.
+    def neighinCommon(self):
+        pass
+
+
+    def imprimi_info(self):
+        pass

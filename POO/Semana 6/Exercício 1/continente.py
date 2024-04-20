@@ -20,8 +20,18 @@ class Continente:
     def __init__(self, nome: str) -> None:
         self.__name = nome
 
+
+    @property
+    def nome(self):
+        return self.__name
     
-    def addCountry(self):
+
+    @nome.setter
+    def nome(self, nome):
+        self.__name = nome
+  
+    
+    def addCountry(self, pais: Pais):
         pass
 
 
@@ -46,4 +56,8 @@ class Continente:
 
 
     def ratioTerritoryCountryvsCountry(self) -> float:
+        pass
+
+    
+    def imprimi_info(self):
         pass
