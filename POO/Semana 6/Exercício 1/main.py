@@ -25,6 +25,12 @@ def main():
     asia = Continente('Ásia')
     europa = Continente('Europa')
 
+    america.addCountry(brasil)
+    america.addCountry(argentina)
+    america.addCountry(uruguai)
+
+    teste = america.maxPopinCountry()
+    print(teste)
 
 if __name__ == '__main__':
     main()

@@ -12,6 +12,7 @@ Classe Continente:
 ◦ Crie um método que retorne o país de menor dimensão territorial no continente.
 ◦ Crie um método que retorne a razão territorial do maior país em relação ao menor país.
 '''
+from __future__ import annotations
 from pais import Pais
 
 
@@ -19,36 +20,47 @@ from pais import Pais
 class Continente:
     def __init__(self, nome: str) -> None:
         self.__name = nome
+        self.__countries: list[Continente] = []
 
 
     @property
-    def nome(self):
+    def nome(self) -> str:
         return self.__name
     
 
-    @nome.setter
-    def nome(self, nome):
-        self.__name = nome
+    @property
+    def country(self) -> list[Pais]:
+        return self.__countries
   
     
+    #Crie um método que permita adicionar países aos continentes.
     def addCountry(self, pais: Pais):
-        pass
+        self.__countries.append(pais)
 
 
+    #Crie um método que retorne a dimensão total do continente.
     def totalDimension(self) -> float:
-        pass
+        return sum(pais.dimensao for pais in self.__countries)
 
 
+    #Crie um método que retorne a população total do continente.
     def totalPop(self) -> float:
-        pass
+        return sum(pais.populacao for pais in self.__countries)
 
 
+    #Crie um método que retorne a densidade populacional do continente.
     def popDensity(self) -> float:
-        pass
+        return sum(pais.popuDensity() for pais in self.__countries)
 
 
-    def maxPopinCountry(self):
-        pass
+    #Crie um método que retorne o país com maior população no continente.
+    def maxPopinCountry(self) -> Pais:
+        maxPop = self.__countries[0]   
+        
+        for pais in self.__countries:
+            if pais.populacao > maxPop.populacao: maxPop = pais
+
+        return maxPop
 
 
     def minPopinCountry(self):
