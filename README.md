@@ -1,17 +1,40 @@
-## 1o Semestre - 02/23 - Fundamentos de Programação
-  * Professor -> Márcio Garcia Martins
-  * Linguagem -> Python
+# 1º Semestre - 02/23
+  * **Matéria**: Fundamentos de Programação
+  * **Professor**: Márcio Garcia Martins
+  * **Tecnologia**: Python
     
     - Atividades -> Abrahão Francis
     - Provas     -> Abrahão Francis
     - Trabalhos  -> Lucas Fraga, Abrahão Francis
 
 --------------------------------------------------
-## 2o Semestre - 01/24 - Programação Orientada a Objetos
-  * Professor -> Andriele Busatto do Carmo
-  * Linguagem -> Python
-
+## 2º Semestre - 01/24
+  * **Matéria**: Programação Orientada a Objetos
+  * **Professor**: Andriele Busatto do Carmo
+  * **Tecnologia**: Python
     
     - Atividades -> Abrahão Francis
     - Provas     -> Abrahão Francis
     - Trabalhos  -> Lucas Fraga, Abrahão Francis
+
+--------------------------------------------------
+## 3º Semestre - 02/24 
+  * **Matéria**: Projeto de Jogos: Prototipagem de Jogos 3D
+  * **Professor** -> Joao Ricardo de Bittencourt Menezes
+  * **Tecnologia** -> C# - Unity3D
+
+    
+    - Atividades -> -
+    - Provas     -> -
+    - Trabalhos  -> -
+
+##
+
+  * **Matéria**: Estrutura de Dados Lineares
+  * **Professor** -> Cassiano Ricardo Neubauer Moralles
+  * **Tecnologia** -> -
+
+    
+    - Atividades -> -
+    - Provas     -> -
+    - Trabalhos  -> -
