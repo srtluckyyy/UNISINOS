@@ -31,8 +31,8 @@
 ##
 
   * **Matéria**: Estrutura de Dados Lineares
-  * **Professor** -> Cassiano Ricardo Neubauer Moralles
-  * **Tecnologia** -> -
+  * **Professor** -> Vinicius Bischoff
+  * **Tecnologia** -> Java ou Python
 
     
     - Atividades -> -
