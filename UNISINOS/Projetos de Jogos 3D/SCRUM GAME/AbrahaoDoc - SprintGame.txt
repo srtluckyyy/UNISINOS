@@ -1,0 +1,82 @@
+sprint1
+----------------------------------------------
+dia 1: r = 12(dado) + 4(evento)
+6 = 28 -> 28 | a fazer
+11 = 24 -> 10 | em progresso
+
+acontecimentos:
+Mudança de requisitos: 
+O product owner fez mudanças no projeto, então esta historia vai levar 4h adicionais.
+
+----------------------------------------------
+dia 2: r = - 4(evento) - 6(dado)
+6 = 28 -> 28 | a fazer
+11 = 10 -> 0 | finalizado
+
+acontecimentos:
+Boa contratação:
+O novo contratado que ajuda você é bom. Jogue 2d6 e some este valor a sua produtividade.
+
+----------------------------------------------
+dia 3: r = 6(dado) + 4(evento)
+6 = 28 -> 26 | em progresso
+
+acontecimentos:
+Mudança de requisitos: 
+O product owner fez mudanças no projeto, então esta historia vai levar 4h adicionais.
+----------------------------------------------
+
+sprint2
+----------------------------------------------
+dia 1: r = 6(dado)
+6 = 26 -> 20 | em progresso
+
+acontecimentos:
+mau humor:
+você está chateado, desmotivado pra trabalhar.
+
+----------------------------------------------
+dia 2: r = 12(dado)
+6 = 20 -> 8 | em progresso
+
+acontecimentos:
+programação em par:
+aplique programação em pares. (???)
+
+----------------------------------------------
+dia 3: r = 8(dado)
+6 = 8 -> 0 | finalizado
+
+acontecimentos:
+Compartilhem metas:
+junte a equipe e compartilhe as metas chave do projeto.
+
+----------------------------------------------
+
+sprint3
+----------------------------------------------
+dia 1: r = 7(dado)
+2 = 27 -> 20 | em progresso
+
+acontecimento:
+Habilidades fracas:
+você não possui habilidades suficientes para finalizar o trabalho.
+
+----------------------------------------------
+dia 2: r = 6(dado) - 4(evento)
+2 = 20 -> 18 | em progresso
+
+acontecimento:
+Mudança de requisitos: 
+O product owner fez mudanças no projeto, então esta historia vai levar 4h adicionais.
+
+----------------------------------------------
+dia 3: r = 8(dado)
+2 = 18 -> 10 | em progresso
+
+acontecimento:
+Especificação não clara:
+a especificação não está bem clara pra você.
+
+----------------------------------------------
+fim
