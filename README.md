@@ -21,7 +21,7 @@
 ## 3º Semestre - 02/24 
   * **Matéria**: Projeto de Jogos: Prototipagem de Jogos 3D
   * **Professor** -> Joao Ricardo de Bittencourt Menezes
-  * **Tecnologia** -> C# - Unity3D
+  * **Tecnologia** -> C# - Godot 
 
     
     - Atividades -> -
