@@ -10,20 +10,10 @@
     Responda às perguntas no final da atividade para refletir sobre o desempenho e a aplicabilidade dos métodos de pesquisa.
 
 Perguntas para Reflexão:
-    1. Qual foi a posição do livro "Harry Potter" na lista original usando pesquisa sequencial?
-        Na posição 5.
-    
-    2. Como a posição do livro mudou ao utilizar a pesquisa binária? Por quê?
-        Porque foi utilizado a função sort() para ordenar a lista antes de realizar a pesquisa binária. Ai a lista mudou para:
-        > ['1984', 'A Guerra dos Tronos', 'Cem Anos de Solidão', 'Dom Quixote', 'Harry Potter', ...]
-        Colocando o livro "Harry Potter" na posição 4 do array.
-     
-    3. Em qual situação você acha que a pesquisa sequencial seria mais útil do que a pesquisa binária?
-        Quando a lista é pequena, a pesquisa sequencial é mais eficiente.
-
-    4. Explique como a pesquisa mista decide qual método utilizar. Quando você acha que essa abordagem é mais vantajosa?
-        A pesquisa mista decide qual método utilizar baseado no tamanho da lista comparando-a com o limite, que por padrão é 5. Se a  lista for pequena, será feita a sequencial, caso contrario será a binária.
-        Acho que só quando não se tem certeza de qual vai ser o tamanho da lista, ou quando vai ser verificado várias listas de tamanhos diferentes.
+    Qual foi a posição do livro "Harry Potter" na lista original usando pesquisa sequencial?
+    Como a posição do livro mudou ao utilizar a pesquisa binária? Por quê?
+    Em qual situação você acha que a pesquisa sequencial seria mais útil do que a pesquisa binária?
+    Explique como a pesquisa mista decide qual método utilizar. Quando você acha que essa abordagem é mais vantajosa?
 '''
 
 

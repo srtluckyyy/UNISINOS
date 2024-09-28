@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwbitibi8wh60"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kslu3"]
+albedo_color = Color(0.6, 0.3504, 0.132, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1gtyx"]
+material = SubResource("StandardMaterial3D_kslu3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iw6et"]
+albedo_color = Color(1, 0.25, 0.25, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_o6q5c"]
+material = SubResource("StandardMaterial3D_iw6et")
+
+[node name="casa3" type="Node3D"]
+
+[node name="base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.17674, 0, 0, 0, 1, 0, 0, 0, 1.7187, -0.460986, 0.500013, 0)
+mesh = SubResource("BoxMesh_1gtyx")
+
+[node name="laje" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.17674, 0, 0, 0, 0.0818906, 0, 0, 0, 1.7187, 0.645686, 0.0393153, 0.00650907)
+mesh = SubResource("BoxMesh_1gtyx")
+
+[node name="base2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.18623, 0, 0, 0, 1.00807, 0, 0, 0, 1.17331, 0.642986, 0.500013, -0.203529)
+mesh = SubResource("BoxMesh_1gtyx")
+
+[node name="telhado" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.62433, 0, 0, 0, 0.362316, 0, 0, 0, 1.97182, 0, 1.16832, 0)
+mesh = SubResource("PrismMesh_o6q5c")

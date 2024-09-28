@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6beoygkchie8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7h2p"]
+albedo_color = Color(1, 0.466667, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_052tk"]
+material = SubResource("StandardMaterial3D_j7h2p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgy7h"]
+albedo_color = Color(0, 0.45, 0.0225, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dy5f1"]
+material = SubResource("StandardMaterial3D_mgy7h")
+
+[node name="Arvore" type="Node3D"]
+
+[node name="Caule" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.260512, 0, 0, 0, 1, 0, 0, 0, 0.284471, 0, 0.999281, 0)
+mesh = SubResource("CylinderMesh_052tk")
+
+[node name="Folhas" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.40147, 0, 0, 0, 1.91921, 0, 0, 0, 1.32615, 0, 1.96035, 0)
+mesh = SubResource("BoxMesh_dy5f1")

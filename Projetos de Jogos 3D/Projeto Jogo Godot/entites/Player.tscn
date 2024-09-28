@@ -1,0 +1,112 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh3p4qwv420ct"]
+
+[sub_resource type="GDScript" id="GDScript_bf32g"]
+resource_name = "player"
+script/source = "extends CharacterBody3D
+
+# Speed
+@export var speed: float = 10.0
+@onready var run_speed: float = speed * 2
+@export var speed_base: float = 10.0
+@onready var jump_velocity: float = 4.5
+
+# Camera
+@onready var twist_pivot = $Twist
+@onready var pitch_pivot = $Twist/Pitch
+var mouse_captured = Input.MOUSE_MODE_CAPTURED
+var mouse_visible = Input.MOUSE_MODE_VISIBLE
+var mouse_sensitivity = 0.001
+var twist_input = 0
+var pitch_input = 0
+
+
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _physics_process(delta: float) -> void:
+	# Getting Input and Direction
+	var input_dir := Input.get_vector(\"left\", \"right\", \"up\", \"down\")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	# Add the gravity.
+	if not is_on_floor(): velocity += get_gravity() * delta
+	
+	# Momentent functions
+	mouse() 
+	jump()
+	move(direction)
+	
+	move_and_slide()
+
+# Move and Run
+func move(direction: Vector3) -> void:
+	# Movement
+	if direction:
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
+	
+	# Run
+	if Input.is_action_just_pressed(\"run\"): speed = run_speed
+	if Input.is_action_just_released(\"run\"): speed = speed_base
+
+func jump() -> void:
+	if Input.is_action_just_pressed(\"jump\") and is_on_floor(): velocity.y = jump_velocity
+
+func mouse() -> void:
+	# \"Pause\"
+	if Input.is_action_just_pressed(\"esc\"):
+		if Input.mouse_mode == mouse_captured: Input.mouse_mode = mouse_visible
+		else: Input.mouse_mode = mouse_captured
+	
+	# Camera Rotation
+	twist_pivot.rotate_y(twist_input)
+	pitch_pivot.rotate_x(pitch_input)
+	
+	twist_pivot.rotation.y = clamp(twist_pivot.rotation.y, deg_to_rad(-80), deg_to_rad(80))
+	pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x, deg_to_rad(-30), deg_to_rad(30))
+	
+	twist_input = 0.0
+	pitch_input = 0.0
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		if Input.mouse_mode == mouse_captured:
+			twist_input = -event.relative.x * mouse_sensitivity
+			pitch_input = -event.relative.y * mouse_sensitivity
+"
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yahnn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkm5n"]
+albedo_color = Color(0.0166664, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jadwy"]
+material = SubResource("StandardMaterial3D_tkm5n")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwotf"]
+
+[node name="Player" type="CharacterBody3D"]
+top_level = true
+script = SubResource("GDScript_bf32g")
+
+[node name="rsoto" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.781346, 0, 0, 0, 0.2132, 0, 0, 0, 0.608602, 0, 0.420898, -0.312946)
+mesh = SubResource("CapsuleMesh_yahnn")
+
+[node name="corpo" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_jadwy")
+
+[node name="Corpo" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_nwotf")
+
+[node name="Twist" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Pitch" type="Node3D" parent="Twist"]
+transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Twist/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 0.952773, 0.303684, 0, -0.303684, 0.952773, 0, 0, 0)
